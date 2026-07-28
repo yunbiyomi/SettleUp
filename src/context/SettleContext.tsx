@@ -19,5 +19,9 @@ export function SettlementProvider({ children }: { children: React.ReactNode }) 
 }
 
 export function useSettlement() {
-    return useContext(SettleContext);
+    const context = useContext(SettleContext);
+    if (!context) {
+        throw new Error("useSettlement must be used within SettlementProvider");
+    }
+    return context;
 }
