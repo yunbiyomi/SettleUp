@@ -8,30 +8,30 @@ import ThemeToggle from "./components/ThemeToggle";
 import { Theme } from "./types/theme";
 
 const router = createBrowserRouter([
-  {path: '/', element: <MemberPage /> },
-  {path: '/expenses', element: <ExpensesPage /> },
-  {path: '/result', element: <ResultPage /> },
+    { path: "/", element: <MemberPage /> },
+    { path: "/expenses", element: <ExpensesPage /> },
+    { path: "/result", element: <ResultPage /> },
 ]);
 
 export default function App() {
-  const [theme, setTheme] = useState<Theme>(() => {
-    const saved = localStorage.getItem("theme");
-    return saved === Theme.light || saved === Theme.dark ? saved : Theme.light;
-  });
+    const [theme, setTheme] = useState<Theme>(() => {
+        const saved = localStorage.getItem("theme");
+        return saved === Theme.light || saved === Theme.dark ? saved : Theme.light;
+    });
 
-  useEffect(() => {
-    document.documentElement.setAttribute("data-theme", theme);
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+    useEffect(() => {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+    }, [theme]);
 
-  function toggleTheme() {
-    setTheme((prev) => (prev === Theme.dark ? Theme.light : Theme.dark));
-  }
+    function toggleTheme() {
+        setTheme((prev) => (prev === Theme.dark ? Theme.light : Theme.dark));
+    }
 
-  return (
-    <SettlementProvider>
-      <RouterProvider router={router} />
-      <ThemeToggle theme={theme} onToggle={toggleTheme} />
-    </SettlementProvider>
-  )
+    return (
+        <SettlementProvider>
+            <RouterProvider router={router} />
+            <ThemeToggle theme={theme} onToggle={toggleTheme} />
+        </SettlementProvider>
+    );
 }

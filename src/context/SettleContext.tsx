@@ -12,10 +12,8 @@ export function SettlementProvider({ children }: { children: React.ReactNode }) 
     const [members, setMembers] = useState<Member[]>([]);
 
     return (
-        <SettleContext.Provider value={{ members, setMembers }}>
-            {children}
-        </SettleContext.Provider>
-    )
+        <SettleContext.Provider value={{ members, setMembers }}>{children}</SettleContext.Provider>
+    );
 }
 
 export function useSettlement() {

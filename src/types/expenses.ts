@@ -6,3 +6,21 @@ export interface ExpenseInfo {
     amount: number;
     participantIds: string[];
 }
+
+export const PLACE_EMOJIS = [
+    "📍",
+    "🍖",
+    "🍔",
+    "🍗",
+    "🍺",
+    "🍷",
+    "☕",
+    "🍜",
+    "🍕",
+    "🍣",
+    "🍰",
+    "🍙",
+    "🎤",
+    "🍿",
+    "🚕",
+];

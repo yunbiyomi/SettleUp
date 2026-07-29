@@ -1,88 +1,93 @@
 :root {
-    /* 포인트 컬러 */
-    --point-color: #2f6b4f;
+  /* 포인트 컬러 */
+  --point-color: #2f6b4f;
 
-    /* 배경 */
-    --bg-page: #f5f5f5;
-    --bg-card: #ffffff;
-    --bg-input: #f0f0f0;
-    --bg-chip-remove: rgba(0, 0, 0, 0.08);
-    --bg-chip-remove-hover: rgba(0, 0, 0, 0.15);
-    --bg-step-badge: rgba(59, 130, 246, 0.1);
+  /* 배경 */
+  --bg-page: #f5f5f5;
+  --bg-card: #ffffff;
+  --bg-input: #f0f0f0;
+  --bg-chip-remove: rgba(0, 0, 0, 0.08);
+  --bg-chip-remove-hover: rgba(0, 0, 0, 0.15);
+  --bg-step-badge: rgba(59, 130, 246, 0.1);
 
-    /* 텍스트 */
-    --text-primary: #111111;
-    --text-secondary: #767676;
-    --text-placeholder: #a3a3a3;
-    --text-step-badge: #3b82f6;
-    --text-chip-remove: rgba(0, 0, 0, 0.5);
-    --text-error: #dc2626;
+  /* 텍스트 */
+  --text-primary: #111111;
+  --text-secondary: #767676;
+  --text-placeholder: #a3a3a3;
+  --text-step-badge: #3b82f6;
+  --text-chip-remove: rgba(0, 0, 0, 0.5);
+  --text-error: #dc2626;
 
-    /* 테두리 */
-    --border-input: #dcdcdc;
-    --border-input-focus: #b0b0b0;
+  /* 테두리 */
+  --border-input: #dcdcdc;
+  --border-input-focus: #b0b0b0;
 
-    /* 버튼 */
-    --btn-bg: #111111;
-    --btn-text: #ffffff;
+  /* 버튼 */
+  --btn-bg: #111111;
+  --btn-text: #ffffff;
 }
 
 [data-theme="dark"] {
-    /* 포인트 컬러 */
-    --point-color: #4fa47c;
+  /* 포인트 컬러 */
+  --point-color: #4fa47c;
 
-    /* 배경 */
-    --bg-page: #0f0f0f;
-    --bg-card: #1a1a1a;
-    --bg-input: #252525;
-    --bg-chip-remove: rgba(255, 255, 255, 0.15);
-    --bg-chip-remove-hover: rgba(255, 255, 255, 0.25);
-    --bg-step-badge: rgba(59, 130, 246, 0.15);
+  /* 배경 */
+  --bg-page: #0f0f0f;
+  --bg-card: #1a1a1a;
+  --bg-input: #252525;
+  --bg-chip-remove: rgba(255, 255, 255, 0.15);
+  --bg-chip-remove-hover: rgba(255, 255, 255, 0.25);
+  --bg-step-badge: rgba(59, 130, 246, 0.15);
 
-    /* 텍스트 */
-    --text-primary: #ffffff;
-    --text-secondary: #888888;
-    --text-placeholder: #666666;
-    --text-step-badge: #60a5fa;
-    --text-chip-remove: rgba(255, 255, 255, 0.7);
-    --text-error: #f87171;
+  /* 텍스트 */
+  --text-primary: #ffffff;
+  --text-secondary: #888888;
+  --text-placeholder: #666666;
+  --text-step-badge: #60a5fa;
+  --text-chip-remove: rgba(255, 255, 255, 0.7);
+  --text-error: #f87171;
 
-    /* 테두리 */
-    --border-input: #333333;
-    --border-input-focus: #555555;
+  /* 테두리 */
+  --border-input: #333333;
+  --border-input-focus: #555555;
 
-    /* 버튼 */
-    --btn-bg: #ffffff;
-    --btn-text: #111111;
+  /* 버튼 */
+  --btn-bg: #ffffff;
+  --btn-text: #111111;
 }
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", sans-serif;
-    background: var(--bg-page);
-    color: var(--text-primary);
-    -webkit-font-smoothing: antialiased;
-    transition: background 0.2s ease, color 0.2s ease;
+  font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Pretendard", sans-serif;
+  background: var(--bg-page);
+  color: var(--text-primary);
+  -webkit-font-smoothing: antialiased;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
 }
 
 .theme-toggle {
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    width: 48px;
-    height: 48px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background: var(--bg-card);
-    border: 1px solid var(--border-input);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
-    font-size: 20px;
-    line-height: 1;
-    z-index: 1000;
-    transition: background 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1px solid var(--border-input);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  font-size: 20px;
+  line-height: 1;
+  z-index: 1000;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.15s ease;
 }
 
 .theme-toggle:hover {
-    transform: scale(1.06);
+  transform: scale(1.06);
 }

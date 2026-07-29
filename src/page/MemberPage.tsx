@@ -66,7 +66,7 @@ export default function MemberPage() {
         if (members.length === 0) {
             return;
         }
-        
+
         navigate("/expenses");
     }
 
@@ -99,11 +99,7 @@ export default function MemberPage() {
                 {errorMessage && <p className="member-error">{errorMessage}</p>}
                 {members.length > 0 && (
                     <div className="member-chips-header">
-                        <button
-                            type="button"
-                            className="member-reset-btn"
-                            onClick={resetMembers}
-                        >
+                        <button type="button" className="member-reset-btn" onClick={resetMembers}>
                             전체 삭제
                         </button>
                     </div>
@@ -113,10 +109,12 @@ export default function MemberPage() {
                         <li
                             key={member.id}
                             className="member-chip"
-                            style={{
-                                "--chip-bg-light": member.lightColor,
-                                "--chip-bg-dark": member.color,
-                            } as CSSProperties}
+                            style={
+                                {
+                                    "--chip-bg-light": member.lightColor,
+                                    "--chip-bg-dark": member.color,
+                                } as CSSProperties
+                            }
                         >
                             <span className="member-chip-emoji">{member.emoji}</span>
                             <span>{member.name}</span>
@@ -139,7 +137,9 @@ export default function MemberPage() {
                     onClick={goToExpenses}
                 >
                     {members.length}명이랑 정산하기
-                    <span className="member-submit-arrow" aria-hidden>›</span>
+                    <span className="member-submit-arrow" aria-hidden>
+                        ›
+                    </span>
                 </button>
             </div>
         </div>

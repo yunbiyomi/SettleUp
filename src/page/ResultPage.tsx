@@ -1,5 +1,3 @@
 export default function ResultPage() {
-  return (
-    <div>ResultPage</div>
-  )
+    return <div>ResultPage</div>;
 }
