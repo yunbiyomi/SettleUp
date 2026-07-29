@@ -57,7 +57,7 @@
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--border-logo);
+  background: var(--point-color);
 }
 
 .expenses-item-order {
@@ -203,7 +203,7 @@
 }
 
 .expenses-emoji-option.selected {
-  background: var(--border-logo);
+  background: var(--point-color);
   transform: scale(1.06);
 }
 
@@ -318,8 +318,8 @@
 
 .expenses-add-submit:not(:disabled) {
   border-style: solid;
-  border-color: var(--border-logo);
-  background: var(--border-logo);
+  border-color: var(--point-color);
+  background: var(--point-color);
   color: #ffffff;
 }
 
