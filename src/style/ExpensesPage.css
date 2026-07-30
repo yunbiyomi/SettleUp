@@ -47,7 +47,25 @@
 .expenses-item {
   position: relative;
   padding-left: 28px;
+  padding-right: 28px;
   padding-bottom: 24px;
+}
+
+.expenses-item-delete {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  color: var(--text-placeholder);
+  transition: color 0.15s;
+}
+
+.expenses-item-delete:hover {
+  color: var(--text-error);
 }
 
 .expenses-item-dot {

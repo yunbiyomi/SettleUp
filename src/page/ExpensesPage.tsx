@@ -54,6 +54,14 @@ export default function ExpensesPage() {
         resetForm();
     }
 
+    function removeExpense(id: string) {
+        setExpenses((prev) =>
+            prev
+                .filter((expense) => expense.id !== id)
+                .map((expense, index) => ({ ...expense, order: index + 1 }))
+        );
+    }
+
     // Render
     const renderExpense = (expense: ExpenseInfo) => {
         const participantEmojis = expense.participantIds
@@ -63,6 +71,29 @@ export default function ExpensesPage() {
         return (
             <li key={expense.id} className="expenses-item">
                 <span className="expenses-item-dot" aria-hidden />
+                <button
+                    type="button"
+                    className="expenses-item-delete"
+                    onClick={() => removeExpense(expense.id)}
+                    aria-label={`${expense.place} 삭제`}
+                >
+                    <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                    >
+                        <path d="M3 6h18" />
+                        <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                        <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6" />
+                        <line x1="10" y1="11" x2="10" y2="17" />
+                        <line x1="14" y1="11" x2="14" y2="17" />
+                    </svg>
+                </button>
                 <span className="expenses-item-order">{expense.order}차</span>
                 <div className="expenses-item-name">
                     <span className="expenses-item-emoji">{expense.emoji}</span>
